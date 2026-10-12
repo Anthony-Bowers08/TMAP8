@@ -339,11 +339,38 @@ output_file_base = 'ZrCoHx_PCT_out'
   []
 []
 
+#[Outputs]
+ # file_base = ${output_file_base}
+ # csv = true
+ # [exodus]
+ #   type = Exodus
+ #   execute_on = 'timestep_end'
+ # []
+#[]
+
+
 [Outputs]
   file_base = ${output_file_base}
-  csv = true
+  [csv]
+    type = CSV
+  []
   [exodus]
     type = Exodus
     execute_on = 'timestep_end'
   []
 []
+
+
+#[Outputs]
+#  [csv]
+#    type = CSV
+#    file_base = '${output_file_base}'
+#    sync_times = '100'
+#    sync_only = false
+#  []
+
+#   [exodus]
+#    type = Exodus
+#    execute_on = 'timestep_end'
+#  []
+#[]
